@@ -532,8 +532,13 @@ margin: 10px 0 16px;
 
 .mini-card {
   padding: 24px;
-}
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+  text-align: center;        /* center text */
+}
 .mini-value {
   font-size: 42px;
   line-height: 1;
