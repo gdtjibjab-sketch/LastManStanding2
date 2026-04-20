@@ -1,0 +1,32 @@
+// COUNTDOWN TIMER
+function updateTimer() {
+  const target = new Date();
+  target.setHours(target.getHours() + 6);
+
+  const now = new Date();
+  const diff = target - now;
+
+  const h = Math.floor(diff / 1000 / 60 / 60);
+  const m = Math.floor((diff / 1000 / 60) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("timer").innerText =
+    `${h}h ${m}m ${s}s`;
+}
+
+setInterval(updateTimer, 1000);
+
+// LIVE PLAYER COUNT
+let players = 10284;
+
+setInterval(() => {
+  const drop = Math.floor(Math.random() * 3); // 0–2 players out
+  players -= drop;
+
+  document.getElementById("players").innerText =
+    `${players.toLocaleString()} players remaining`;
+
+  document.getElementById("livePlayers").innerText =
+    players.toLocaleString();
+
+}, 3000);
