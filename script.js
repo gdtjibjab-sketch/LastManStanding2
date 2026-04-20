@@ -1,27 +1,37 @@
-function updateCountdown() {
+function updateWorldCupCountdown() {
   const el = document.getElementById("countdown");
   if (!el) return;
 
-  const target = new Date("2026-06-11");
+  const worldCupStart = new Date("2026-06-11T00:00:00");
   const now = new Date();
 
-  const diff = target - now;
-  const days = Math.ceil(diff / (1000*60*60*24));
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const diff = worldCupStart - now;
+  const daysLeft = Math.ceil(diff / msPerDay);
 
-  el.innerText = days > 0 ? days : "Live";
+  if (daysLeft > 0) {
+    el.textContent = daysLeft.toLocaleString();
+  } else if (daysLeft === 0) {
+    el.textContent = "Today";
+  } else {
+    el.textContent = "Live";
+  }
 }
 
-function updatePlayers() {
+function updateLivePlayers() {
   const el = document.getElementById("livePlayers");
   if (!el) return;
 
   const base = 10284;
-  const rand = Math.floor(Math.random()*50);
+  const variance = Math.floor(Math.random() * 80);
+  const direction = Math.random() > 0.5 ? 1 : -1;
+  const value = base + variance * direction;
 
-  el.innerText = (base + rand).toLocaleString();
+  el.textContent = value.toLocaleString();
 }
 
-updateCountdown();
-updatePlayers();
+updateWorldCupCountdown();
+updateLivePlayers();
 
-setInterval(updatePlayers, 10000);
+setInterval(updateWorldCupCountdown, 1000 * 60 * 60);
+setInterval(updateLivePlayers, 1000 * 12);
