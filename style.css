@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  background: #061021;
+  color: white;
+  font-family: Inter, sans-serif;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 16px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(180deg,#0c1c34,#071122);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 34px;
+}
+
+.hero p {
+  color: #9fb0cc;
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+/* LIVE BAR */
+.live-bar {
+  background: #0d1b33;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #ffb25b;
+  animation: pulse 2s infinite;
+}
+
+/* BUTTON */
+.btn {
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.primary {
+  background: white;
+  color: black;
+}
+
+.telegram-btn {
+  background: #229ED9;
+}
+
+/* COUNTDOWN */
+.countdown {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#timer {
+  font-size: 28px;
+  color: #ffb25b;
+}
+
+/* STEPS */
+.step {
+  background: #0d1b33;
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.step img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* FEATURE */
+.feature {
+  background: #0d1b33;
+  border-radius: 16px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.feature img {
+  width: 100%;
+}
+
+.feature div {
+  padding: 12px;
+}
+
+/* PRIZE */
+.prize {
+  background: #0d1b33;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.prize h2 {
+  color: #ffb25b;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.stat {
+  flex: 1;
+  background: #0d1b33;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* TELEGRAM */
+.telegram {
+  background: #0d1b33;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* CTA */
+.cta {
+  background: #0c1c34;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* ANIMATIONS */
+@keyframes pulse {
+  0% { opacity: .7; }
+  50% { opacity: 1; }
+  100% { opacity: .7; }
+}
