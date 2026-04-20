@@ -332,7 +332,7 @@ section {
 .telegram-copy h2,
 .final-cta-box h2,
 .world-cup-card h2 {
-  margin: 10px 0 0;
+margin: 10px 0 16px;
   font-size: clamp(30px, 3vw, 48px);
   line-height: 1;
   font-weight: 1000;
