@@ -13,38 +13,32 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(180deg,#0c1c34,#071122);
-  border-radius: 20px;
-  padding: 20px;
   text-align: center;
+  background: linear-gradient(180deg,#0c1c34,#071122);
+  padding: 20px;
+  border-radius: 20px;
 }
 
-.hero h1 {
-  font-size: 34px;
-}
-
-.hero p {
-  color: #9fb0cc;
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
 }
 
 .hero-img {
   width: 100%;
   border-radius: 12px;
-  margin: 10px 0;
 }
 
-/* LIVE BAR */
 .live-bar {
   background: #0d1b33;
   padding: 8px;
-  border-radius: 10px;
   margin: 10px 0;
-  font-size: 14px;
+  border-radius: 10px;
   color: #ffb25b;
   animation: pulse 2s infinite;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn {
   display: block;
   padding: 12px;
@@ -70,16 +64,29 @@ body {
 }
 
 #timer {
-  font-size: 28px;
+  font-size: 26px;
   color: #ffb25b;
+}
+
+/* FEED */
+.feed {
+  margin-top: 20px;
+}
+
+.feed-item {
+  background: #0d1b33;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  font-size: 13px;
 }
 
 /* STEPS */
 .step {
   background: #0d1b33;
-  border-radius: 16px;
-  padding: 12px;
   margin-top: 10px;
+  padding: 12px;
+  border-radius: 16px;
 }
 
 .step img {
@@ -89,9 +96,9 @@ body {
 
 /* FEATURE */
 .feature {
+  margin-top: 20px;
   background: #0d1b33;
   border-radius: 16px;
-  margin-top: 20px;
   overflow: hidden;
 }
 
@@ -99,15 +106,13 @@ body {
   width: 100%;
 }
 
-.feature div {
-  padding: 12px;
+/* GLOW */
+.glow {
+  box-shadow: 0 0 20px rgba(255,178,91,0.3);
 }
 
 /* PRIZE */
 .prize {
-  background: #0d1b33;
-  border-radius: 16px;
-  padding: 16px;
   margin-top: 20px;
   text-align: center;
 }
@@ -126,32 +131,40 @@ body {
 .stat {
   flex: 1;
   background: #0d1b33;
-  border-radius: 12px;
   padding: 10px;
+  border-radius: 12px;
   text-align: center;
+}
+
+/* SIMULATE */
+.simulate {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.simulate button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #ffb25b;
+  cursor: pointer;
 }
 
 /* TELEGRAM */
 .telegram {
-  background: #0d1b33;
-  padding: 20px;
-  border-radius: 16px;
   margin-top: 20px;
   text-align: center;
 }
 
 /* CTA */
 .cta {
-  background: #0c1c34;
-  padding: 20px;
-  border-radius: 16px;
   margin-top: 20px;
   text-align: center;
 }
 
 /* ANIMATIONS */
 @keyframes pulse {
-  0% { opacity: .7; }
-  50% { opacity: 1; }
-  100% { opacity: .7; }
+  0% {opacity:.6}
+  50% {opacity:1}
+  100% {opacity:.6}
 }
