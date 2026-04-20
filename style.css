@@ -73,6 +73,7 @@ a {
 .brand img {
   height: 72px;
   width: auto;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
 }
 
 .nav {
@@ -133,26 +134,11 @@ section {
   letter-spacing: 0.1em;
 }
 
-.hero-title {
-  margin: 12px 0 14px;
-  max-width: 640px;
-  line-height: 0.95;
-}
-
-/* TOP LINE (WHITE) */
-.hero-top {
-  display: block;
-  font-size: clamp(32px, 3vw, 48px);
-  font-weight: 800;
-  color: #f3f4f6;
-  letter-spacing: -0.03em;
-  margin-bottom: 6px;
-}
-
-/* MAIN GOLD TEXT */
+/* hero title options */
 .hero-title {
   margin: 12px 0 14px;
   max-width: 760px;
+  line-height: 0.95;
 }
 
 .hero-top {
@@ -165,6 +151,36 @@ section {
   letter-spacing: -0.03em;
 }
 
+.hero-main {
+  display: block;
+  font-size: clamp(52px, 6vw, 88px);
+  font-weight: 1000;
+  letter-spacing: -0.06em;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #ffe9a3 10%,
+    #ffd166 25%,
+    #ffb703 45%,
+    #fb8500 65%,
+    #c77800 80%,
+    #7a4a00 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 1px 0 #fff3c4,
+    0 2px 0 #ffcc66,
+    0 3px 0 #e6a800,
+    0 4px 0 #b87400,
+    0 6px 12px rgba(0,0,0,0.7),
+    0 12px 24px rgba(0,0,0,0.5);
+  filter: drop-shadow(0 6px 16px rgba(255, 180, 60, 0.35));
+}
+
 .hero-title-image {
   display: block;
   width: 100%;
@@ -173,20 +189,16 @@ section {
   filter: drop-shadow(0 8px 20px rgba(255, 180, 60, 0.18));
 }
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-
-  text-shadow:
-    0 1px 0 #fff2a8,
-    0 2px 0 #e6a800,
-    0 3px 0 #b87400,
-    0 6px 12px rgba(0,0,0,0.6),
-    0 12px 24px rgba(0,0,0,0.4);
-
-  filter: drop-shadow(0 6px 16px rgba(255, 180, 60, 0.25));
+/* fallback if still using plain h1 */
+.hero h1 {
+  margin: 12px 0 14px;
+  font-size: clamp(44px, 5vw, 76px);
+  line-height: 0.95;
+  font-weight: 1000;
+  letter-spacing: -0.04em;
+  max-width: 640px;
 }
+
 .hero-text {
   margin: 0;
   max-width: 560px;
@@ -318,7 +330,8 @@ section {
 .section-head h2,
 .feature-copy h2,
 .telegram-copy h2,
-.final-cta-box h2 {
+.final-cta-box h2,
+.world-cup-card h2 {
   margin: 10px 0 0;
   font-size: clamp(30px, 3vw, 48px);
   line-height: 1;
@@ -375,7 +388,8 @@ section {
 .telegram-copy p,
 .prize-main-copy p,
 .mini-card p,
-.final-cta-box p {
+.final-cta-box p,
+.world-cup-card p {
   margin: 0;
   color: var(--muted);
   font-size: 16px;
@@ -392,6 +406,11 @@ section {
   grid-template-columns: 0.95fr 1.05fr;
   gap: 22px;
   align-items: stretch;
+}
+
+.feature-stack {
+  display: grid;
+  gap: 22px;
 }
 
 .feature-copy,
@@ -422,6 +441,38 @@ section {
   border-radius: 20px;
   height: 100%;
   object-fit: cover;
+}
+
+/* world cup card */
+.world-cup-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.world-cup-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 178, 87, 0.12), transparent 35%);
+  pointer-events: none;
+}
+
+.world-cup-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid rgba(255, 178, 87, 0.75);
+  box-shadow: 0 0 0 4px rgba(255, 178, 87, 0.08);
+}
+
+.world-cup-btn {
+  margin-top: 20px;
+  align-self: flex-start;
 }
 
 /* prizes */
@@ -534,6 +585,55 @@ section {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.strip-stat-live {
+  position: relative;
+  overflow: hidden;
+}
+
+.strip-stat-live::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 178, 87, 0.10), transparent 55%);
+  pointer-events: none;
+}
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #d6deed;
+}
+
+.live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #ffb257;
+  box-shadow: 0 0 0 0 rgba(255, 178, 87, 0.65);
+  animation: pulseLive 1.8s infinite;
+}
+
+@keyframes pulseLive {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 178, 87, 0.65);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 178, 87, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 178, 87, 0);
+  }
 }
 
 /* telegram */
@@ -677,7 +777,11 @@ section {
   }
 
   .topbar-inner {
-    min-height: 70px;
+    min-height: 76px;
+  }
+
+  .brand img {
+    height: 56px;
   }
 
   .topbar-cta {
@@ -693,6 +797,16 @@ section {
 
   .hero h1 {
     font-size: clamp(38px, 11vw, 58px);
+  }
+
+  .hero-top {
+    text-align: left;
+  }
+
+  .hero-main,
+  .hero-title-image {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .how-grid {
@@ -715,7 +829,7 @@ section {
   }
 
   .brand img {
-    height: 40px;
+    height: 46px;
   }
 
   .topbar-cta {
@@ -738,7 +852,8 @@ section {
   }
 
   .btn,
-  .telegram-btn {
+  .telegram-btn,
+  .world-cup-btn {
     width: 100%;
   }
 
