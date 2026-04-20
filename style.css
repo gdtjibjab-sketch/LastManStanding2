@@ -551,6 +551,12 @@ section {
   overflow: hidden;
   box-shadow: var(--shadow-md);
 }
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* keeps it centered nicely */
+  gap: 10px;
+}
 
 .strip-stat {
   min-height: 118px;
@@ -601,15 +607,14 @@ section {
 }
 
 .live-indicator {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 6px;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #d6deed;
+  color: #ffb257; /* slightly stronger color */
 }
 
 .live-dot {
