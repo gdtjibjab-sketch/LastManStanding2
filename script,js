@@ -1,71 +1,37 @@
-// COUNTDOWN
-function updateTimer() {
-  const target = new Date();
-  target.setHours(target.getHours() + 6);
+function updateWorldCupCountdown() {
+  const el = document.getElementById("countdown");
+  if (!el) return;
 
+  const worldCupStart = new Date("2026-06-11T00:00:00");
   const now = new Date();
-  const diff = target - now;
 
-  const h = Math.floor(diff / 1000 / 60 / 60);
-  const m = Math.floor((diff / 1000 / 60) % 60);
-  const s = Math.floor((diff / 1000) % 60);
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const diff = worldCupStart - now;
+  const daysLeft = Math.ceil(diff / msPerDay);
 
-  document.getElementById("timer").innerText =
-    `${h}h ${m}m ${s}s`;
-}
-setInterval(updateTimer, 1000);
-
-// PLAYERS
-let players = 10284;
-
-setInterval(() => {
-  const drop = Math.floor(Math.random() * 5);
-  players -= drop;
-
-  document.getElementById("players").innerText =
-    `${players.toLocaleString()} players remaining`;
-
-  document.getElementById("livePlayers").innerText =
-    players.toLocaleString();
-
-}, 3000);
-
-// LIVE FEED
-const names = ["Jake","Alex","Chris","Sam","Mike","Leo","Tom"];
-
-function addFeedItem() {
-  const feed = document.getElementById("feed");
-
-  const el = document.createElement("div");
-  el.className = "feed-item";
-
-  const name = names[Math.floor(Math.random()*names.length)];
-  const type = Math.random() > 0.5
-    ? "picked Man City"
-    : "was eliminated ❌";
-
-  el.innerText = `${name} ${type}`;
-
-  feed.prepend(el);
-
-  if (feed.children.length > 6) {
-    feed.removeChild(feed.lastChild);
-  }
-}
-
-setInterval(addFeedItem, 2000);
-
-// SIMULATE
-document.getElementById("simulateBtn").onclick = () => {
-  const survive = Math.random() > 0.6;
-
-  const result = document.getElementById("result");
-
-  if (survive) {
-    result.innerText = "✅ You survived this round!";
-    result.style.color = "lightgreen";
+  if (daysLeft > 0) {
+    el.textContent = daysLeft.toLocaleString();
+  } else if (daysLeft === 0) {
+    el.textContent = "Today";
   } else {
-    result.innerText = "❌ You were eliminated!";
-    result.style.color = "red";
+    el.textContent = "Live";
   }
-};
+}
+
+function updateLivePlayers() {
+  const el = document.getElementById("livePlayers");
+  if (!el) return;
+
+  const base = 10284;
+  const variance = Math.floor(Math.random() * 80);
+  const direction = Math.random() > 0.5 ? 1 : -1;
+  const value = base + variance * direction;
+
+  el.textContent = value.toLocaleString();
+}
+
+updateWorldCupCountdown();
+updateLivePlayers();
+
+setInterval(updateWorldCupCountdown, 1000 * 60 * 60);
+setInterval(updateLivePlayers, 1000 * 12);
