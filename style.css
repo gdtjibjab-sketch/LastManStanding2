@@ -559,7 +559,7 @@ margin: 10px 0 16px;
 .stat-top {
   display: flex;
   align-items: center;
-  justify-content: center; /* keeps it centered nicely */
+  justify-content: flex-start; /* ← LEFT align it */
   gap: 10px;
 }
 
