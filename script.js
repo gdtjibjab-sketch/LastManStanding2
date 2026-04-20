@@ -18,20 +18,5 @@ function updateWorldCupCountdown() {
   }
 }
 
-function updateLivePlayers() {
-  const el = document.getElementById("livePlayers");
-  if (!el) return;
-
-  const base = 10284;
-  const variance = Math.floor(Math.random() * 80);
-  const direction = Math.random() > 0.5 ? 1 : -1;
-  const value = base + variance * direction;
-
-  el.textContent = value.toLocaleString();
-}
-
 updateWorldCupCountdown();
-updateLivePlayers();
-
 setInterval(updateWorldCupCountdown, 1000 * 60 * 60);
-setInterval(updateLivePlayers, 1000 * 12);
