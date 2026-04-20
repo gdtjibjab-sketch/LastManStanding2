@@ -1,4 +1,4 @@
-// COUNTDOWN TIMER
+// COUNTDOWN
 function updateTimer() {
   const target = new Date();
   target.setHours(target.getHours() + 6);
@@ -13,14 +13,13 @@ function updateTimer() {
   document.getElementById("timer").innerText =
     `${h}h ${m}m ${s}s`;
 }
-
 setInterval(updateTimer, 1000);
 
-// LIVE PLAYER COUNT
+// PLAYERS
 let players = 10284;
 
 setInterval(() => {
-  const drop = Math.floor(Math.random() * 3); // 0–2 players out
+  const drop = Math.floor(Math.random() * 5);
   players -= drop;
 
   document.getElementById("players").innerText =
@@ -30,3 +29,43 @@ setInterval(() => {
     players.toLocaleString();
 
 }, 3000);
+
+// LIVE FEED
+const names = ["Jake","Alex","Chris","Sam","Mike","Leo","Tom"];
+
+function addFeedItem() {
+  const feed = document.getElementById("feed");
+
+  const el = document.createElement("div");
+  el.className = "feed-item";
+
+  const name = names[Math.floor(Math.random()*names.length)];
+  const type = Math.random() > 0.5
+    ? "picked Man City"
+    : "was eliminated ❌";
+
+  el.innerText = `${name} ${type}`;
+
+  feed.prepend(el);
+
+  if (feed.children.length > 6) {
+    feed.removeChild(feed.lastChild);
+  }
+}
+
+setInterval(addFeedItem, 2000);
+
+// SIMULATE
+document.getElementById("simulateBtn").onclick = () => {
+  const survive = Math.random() > 0.6;
+
+  const result = document.getElementById("result");
+
+  if (survive) {
+    result.innerText = "✅ You survived this round!";
+    result.style.color = "lightgreen";
+  } else {
+    result.innerText = "❌ You were eliminated!";
+    result.style.color = "red";
+  }
+};
