@@ -63,7 +63,7 @@ a {
 }
 
 .topbar-inner {
-  min-height: 96px;
+  min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,9 +71,10 @@ a {
 }
 
 .brand img {
-  height: 84px;
+  height: 64px;
   width: auto;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+  object-fit: contain;
+  display: block;
 }
 
 .nav {
