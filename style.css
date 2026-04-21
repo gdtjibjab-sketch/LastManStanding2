@@ -136,22 +136,27 @@ section {
 
 /* hero title options */
 .hero-title {
-  margin: 12px 0 14px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
   max-width: 760px;
-  line-height: 0.95;
+}
+
+.hero-title-image {
+  display: block;
+  width: 100%;
+  max-width: 760px;
 }
 
 .hero-top {
-  display: block;
+  position: absolute;
+  top: -6px;
+  left: 0;
   font-size: clamp(28px, 2.8vw, 42px);
   font-weight: 800;
   color: #f3f4f6;
-  text-align: left;
-  margin-bottom: 2px;
-  margin-left: 120px;
   letter-spacing: -0.03em;
 }
-
 .hero-main {
   display: block;
   font-size: clamp(52px, 6vw, 88px);
@@ -816,11 +821,12 @@ section {
   .hero h1 {
     font-size: clamp(38px, 11vw, 58px);
   }
-
+  
   .hero-top {
-    text-align: left;
-    margin-left: 0;
+    position: static;
+    margin-bottom: 6px;
   }
+}
 
   .hero-main,
   .hero-title-image {
