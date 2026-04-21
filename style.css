@@ -140,23 +140,21 @@ section {
   display: inline-block;
   width: 100%;
   max-width: 760px;
-}
-
-.hero-title-image {
-  display: block;
-  width: 100%;
-  max-width: 760px;
+  padding-top: 28px;
 }
 
 .hero-top {
   position: absolute;
-  top: -6px;
-  left: 0;
+  top: 0;
+  left: 6px;
   font-size: clamp(28px, 2.8vw, 42px);
   font-weight: 800;
   color: #f3f4f6;
   letter-spacing: -0.03em;
+  line-height: 1;
+  z-index: 2;
 }
+
 .hero-main {
   display: block;
   font-size: clamp(52px, 6vw, 88px);
@@ -450,7 +448,8 @@ section {
   width: 100%;
   border-radius: 20px;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #06111f;
 }
 
 /* world cup card */
@@ -821,12 +820,11 @@ section {
   .hero h1 {
     font-size: clamp(38px, 11vw, 58px);
   }
-  
+
   .hero-top {
     position: static;
     margin-bottom: 6px;
   }
-}
 
   .hero-main,
   .hero-title-image {
