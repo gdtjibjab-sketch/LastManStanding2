@@ -155,11 +155,11 @@ section {
   display: inline-block;
   width: 100%;
   max-width: 760px;
-  padding-top: 28px;
+  padding-top: 0;
 }
 
 .hero-top {
-  position: absolute;
+    position: static;
   top: 0;
   left: 6px;
   font-size: clamp(28px, 2.8vw, 42px);
