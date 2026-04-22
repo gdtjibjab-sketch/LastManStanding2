@@ -175,7 +175,7 @@ section {
   font-size: clamp(52px, 6vw, 88px);
   font-weight: 1000;
   letter-spacing: -0.06em;
-  text-align: center;
+  text-align: left;
   background: linear-gradient(
     180deg,
     #ffffff 0%,
