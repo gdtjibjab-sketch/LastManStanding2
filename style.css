@@ -272,7 +272,7 @@ section {
   position: relative;
   overflow: hidden;
   color: #ffffff;
-  background: linear-gradient(180deg, #FFA500 0%, #FF7A00 100%);
+background: linear-gradient(180deg, #ff751f 0%, #e65f12 100%);
   box-shadow: 0 12px 28px rgba(255, 138, 0, 0.35);
 }
 .btn-primary::after {
