@@ -98,7 +98,7 @@ min-height: 110px;
   border-radius: 12px;
   font-weight: 900;
   color: #ffffff;
-   background: linear-gradient(180deg, #ff751f 0%, #e65f12 100%)
+  background: linear-gradient(180deg, #FFA500 0%, #FF7A00 100%);
   box-shadow: 0 10px 24px rgba(255, 138, 0, 0.35);
   position: relative;
   overflow: hidden;
@@ -112,7 +112,7 @@ min-height: 110px;
   pointer-events: none;
 }
 .topbar-cta:hover {
-    background: linear-gradient(180deg, #ff8a3d 0%, #ff751f 100%);
+  background: linear-gradient(180deg, #FFB733 0%, #FF8A00 100%);
   box-shadow: 0 14px 30px rgba(255, 138, 0, 0.42);
   transform: translateY(-1px);
 }
@@ -272,7 +272,7 @@ section {
   position: relative;
   overflow: hidden;
   color: #ffffff;
-background: linear-gradient(180deg, #ff751f 0%, #e65f12 100%);
+  background: linear-gradient(180deg, #FFA500 0%, #FF7A00 100%);
   box-shadow: 0 12px 28px rgba(255, 138, 0, 0.35);
 }
 .btn-primary::after {
