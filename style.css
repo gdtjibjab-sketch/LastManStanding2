@@ -1016,3 +1016,101 @@ section {
     font-size: 30px;
   }
 }
+/* ── PREDICT 6 UPDATE: status pills, prize tags, hero image ── */
+
+/* "Sign-ups closed" / "Open now" pill in the hero */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.status-pill-closed {
+  background: rgba(255, 77, 77, 0.10);
+  border: 1px solid rgba(255, 77, 77, 0.32);
+  color: #ff9a9a;
+}
+
+.status-pill-open {
+  background: rgba(46, 204, 113, 0.12);
+  border: 1px solid rgba(46, 204, 113, 0.40);
+  color: #7ee2a8;
+}
+
+/* Small status dot used in pills + prize tags */
+.tag-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.tag-dot-closed {
+  background: #ff4d4d;
+  box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.6);
+  animation: pulseRed 1.8s infinite;
+}
+
+.tag-dot-open {
+  background: #2ecc71;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.55);
+}
+
+@keyframes pulseRed {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.6); }
+  70%  { box-shadow: 0 0 0 9px rgba(255, 77, 77, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+
+/* Open / closed tags inside the prize cards */
+.prize-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 14px;
+}
+
+.prize-tag-open {
+  background: rgba(46, 204, 113, 0.14);
+  border: 1px solid rgba(46, 204, 113, 0.40);
+  color: #7ee2a8;
+}
+
+.prize-tag-closed {
+  background: rgba(255, 77, 77, 0.10);
+  border: 1px solid rgba(255, 77, 77, 0.30);
+  color: #ff9a9a;
+}
+
+.mini-card .prize-tag {
+  margin-top: 12px;
+}
+
+/* Predict 6 promo image in the hero card */
+.hero-card-predict6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card-predict6 img {
+  width: auto;
+  max-width: 100%;
+  max-height: 620px;
+  border-radius: 18px;
+  object-fit: contain;
+  box-shadow: var(--shadow-md);
+}
